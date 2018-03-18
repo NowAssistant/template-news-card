@@ -1,0 +1,538 @@
+$type: card
+rules: []
+properties:
+  title:
+    type: element
+    xtype: at-carbon-card-title
+    links:
+      - title: Go to BBC.co.uk
+        url: bbc.co.uk
+        icon: now:link
+    title: title
+    xgridcols: 12
+    xstyle: 
+    xclass: 
+    actionListeners:
+      - _start
+  content:
+    type: element
+    xtype: at-core-view
+    modelRoot: state.model
+    model: 
+    view: |
+      <style>
+        .news-list-image {
+       		height: 80px;
+          width: 105px;
+          background-color: lightgray;
+        }
+      </style>
+      <div class="container layout-vertical news-list m">
+      {% for item in items | limit: 6 %}
+       <div class="news-item layout-horizontal mbsm {% if forloop.index > 3 %}expanded-only{%endif%}">
+        <at-link href="{{item.link}}" label="{{item.title | escape }}">
+        <div class="layout-horizontal">
+           <div class="mr mtsm"><iron-image sizing="cover" preload class="news-list-image" src="{{item.thumbnail}}"></iron-image></div>
+           <div class="layout-flex">
+              <at-carbon-clamp lines="2" class="font-subhead primary">{{item.title}}</at-carbon-clamp>
+              <at-carbon-clamp lines="2">{{item.description}}</at-carbon-clamp>  
+          </div>
+        </div>
+        </at-link>
+       </div>
+      {% endfor %}
+      </div>
+    xgridcols: 12
+    xstyle: 
+    xclass: 
+    actionListeners:
+      - _start
+    default: 
+  footer3:
+    type: element
+    xtype: at-carbon-card-footer
+    href: http://bbc.co.uk/news/technology
+    expandable: !!bool true
+    title: View in bbc.co.uk
+    xgridcols: 12
+    xstyle: 
+    xclass: 
+    actionListeners:
+      - _start
+$meta:
+  cardId: 240
+  preview-data: |-
+    {
+      "items": [
+        {
+          "title": "Trump campaign data firm accused of harvesting Facebook data",
+          "description": "A US attorney general is investigating reports that millions of Facebook profiles were accessed.",
+          "link": "http://www.bbc.co.uk/news/world-us-canada-43444791",
+          "guid": "http://www.bbc.co.uk/news/world-us-canada-43444791",
+          "pubDate": "2018-03-17T21:55:11Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/13A7A/production/_100460508_whatsubject.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/13A7A/production/_100460508_whatsubject.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-17T21:55:11Z",
+          "id": "http://www.bbc.co.uk/news/world-us-canada-43444791"
+        },
+        {
+          "title": "What does the inside of your knee sound like?",
+          "description": "A team at the Georgia Institute of Technology is developing a stethoscope for your knees.",
+          "link": "http://www.bbc.co.uk/news/technology-43414625",
+          "guid": "http://www.bbc.co.uk/news/technology-43414625",
+          "pubDate": "2018-03-18T01:39:02Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/AF5C/production/_100429844_p0616t5x.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/AF5C/production/_100429844_p0616t5x.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-18T01:39:02Z",
+          "id": "http://www.bbc.co.uk/news/technology-43414625"
+        },
+        {
+          "title": "Can kids hold pens in the digital age?",
+          "description": "Are the fine motor skills necessary to hold a pencil still needed in an age when toddlers swipe?",
+          "link": "http://www.bbc.co.uk/news/technology-43230884",
+          "guid": "http://www.bbc.co.uk/news/technology-43230884",
+          "pubDate": "2018-03-17T01:21:29Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/15BC7/production/_100313098_pencilchild.gif",
+          "thumbnail": "http://c.files.bbci.co.uk/15BC7/production/_100313098_pencilchild.gif",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-17T01:21:29Z",
+          "id": "http://www.bbc.co.uk/news/technology-43230884"
+        },
+        {
+          "title": "Biohacker fined for travel card implant",
+          "description": "Australian biohacker fined for fare evasion despite having his travel card inside his hand.",
+          "link": "http://www.bbc.co.uk/news/technology-43428003",
+          "guid": "http://www.bbc.co.uk/news/technology-43428003",
+          "pubDate": "2018-03-16T12:00:55Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/54AA/production/_100447612_meowludo976.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/54AA/production/_100447612_meowludo976.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T12:00:55Z",
+          "id": "http://www.bbc.co.uk/news/technology-43428003"
+        },
+        {
+          "title": "Camelot warns of 'low level' National Lottery hack",
+          "description": "Customers should change their passwords as a precaution, the National Lottery owner says.",
+          "link": "http://www.bbc.co.uk/news/business-43437097",
+          "guid": "http://www.bbc.co.uk/news/business-43437097",
+          "pubDate": "2018-03-16T19:22:16Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/D70C/production/_92725055_3dd0cd1e-0a7d-4a9f-9eda-869cdd34ec50.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/D70C/production/_92725055_3dd0cd1e-0a7d-4a9f-9eda-869cdd34ec50.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T19:22:16Z",
+          "id": "http://www.bbc.co.uk/news/business-43437097"
+        },
+        {
+          "title": "London wheelchair travellers get Google Maps help",
+          "description": "Users will be able to filter for \"wheelchair accessible\" advice when planning journeys in the capital.",
+          "link": "http://www.bbc.co.uk/news/technology-43429393",
+          "guid": "http://www.bbc.co.uk/news/technology-43429393",
+          "pubDate": "2018-03-16T13:46:35Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/6440/production/_100446652_picture1.png",
+          "thumbnail": "http://c.files.bbci.co.uk/6440/production/_100446652_picture1.png",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T13:46:35Z",
+          "id": "http://www.bbc.co.uk/news/technology-43429393"
+        },
+        {
+          "title": "Virtual cash helps cyber-thieves launder money, research suggests",
+          "description": "Virtual cash and digital payment systems are becoming embedded in cyber-crime, suggests research.",
+          "link": "http://www.bbc.co.uk/news/technology-43428264",
+          "guid": "http://www.bbc.co.uk/news/technology-43428264",
+          "pubDate": "2018-03-16T14:21:48Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/482F/production/_100397481_coins.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/482F/production/_100397481_coins.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T14:21:48Z",
+          "id": "http://www.bbc.co.uk/news/technology-43428264"
+        },
+        {
+          "title": "US punishes 19 Russians over vote meddling and cyber-attacks",
+          "description": "The moves are an attempt to stop \"nefarious attacks emanating from Russia\", officials say.",
+          "link": "http://www.bbc.co.uk/news/world-us-canada-43419809",
+          "guid": "http://www.bbc.co.uk/news/world-us-canada-43419809",
+          "pubDate": "2018-03-15T18:27:07Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/14FC1/production/_100435958_trump_putin_getty.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/14FC1/production/_100435958_trump_putin_getty.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-15T18:27:07Z",
+          "id": "http://www.bbc.co.uk/news/world-us-canada-43419809"
+        },
+        {
+          "title": "Currys PC World apologises for extra charges on laptops",
+          "description": "Customers report being charged up to £40 more for laptops than the online advertised price.",
+          "link": "http://www.bbc.co.uk/news/business-43418774",
+          "guid": "http://www.bbc.co.uk/news/business-43418774",
+          "pubDate": "2018-03-16T07:46:26Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/55AE/production/_100443912_i30at4h6.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/55AE/production/_100443912_i30at4h6.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T07:46:26Z",
+          "id": "http://www.bbc.co.uk/news/business-43418774"
+        },
+        {
+          "title": "Omega Labyrinth Z anime game banned in the UK",
+          "description": "A PlayStation game which \"promotes the sexualisation of children\" is banned in the UK.",
+          "link": "http://www.bbc.co.uk/news/technology-43414617",
+          "guid": "http://www.bbc.co.uk/news/technology-43414617",
+          "pubDate": "2018-03-15T14:40:15Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/14E58/production/_100429558_mediaitem100429557.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/14E58/production/_100429558_mediaitem100429557.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-15T14:40:15Z",
+          "id": "http://www.bbc.co.uk/news/technology-43414617"
+        },
+        {
+          "title": "Rihanna: Snapchat guilty of 'shaming' domestic violence victims",
+          "description": "The singer says Snapchat \"let us down\" over an advert that asked users if they would slap her.",
+          "link": "http://www.bbc.co.uk/news/newsbeat-43419455",
+          "guid": "http://www.bbc.co.uk/news/newsbeat-43419455",
+          "pubDate": "2018-03-15T17:54:02Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/EF59/production/_100437216_rihannasnapchat.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/EF59/production/_100437216_rihannasnapchat.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-15T17:54:02Z",
+          "id": "http://www.bbc.co.uk/news/newsbeat-43419455"
+        },
+        {
+          "title": "The smart dress with a 'sixth sense'",
+          "description": "Exploring how new creative software, tools, and electronics can be used for fashion design.",
+          "link": "http://www.bbc.co.uk/news/technology-43231983",
+          "guid": "http://www.bbc.co.uk/news/technology-43231983",
+          "pubDate": "2018-03-08T09:55:25Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/FC1C/production/_100404546_p060zgwm.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/FC1C/production/_100404546_p060zgwm.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-08T09:55:25Z",
+          "id": "http://www.bbc.co.uk/news/technology-43231983"
+        },
+        {
+          "title": "Burger-flipping robot begins first shift",
+          "description": "Flippy can handle 12 burgers at once, and is destined to replace human fast-food workers.",
+          "link": "http://www.bbc.co.uk/news/technology-43292047",
+          "guid": "http://www.bbc.co.uk/news/technology-43292047",
+          "pubDate": "2018-03-05T14:36:35Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/E518/production/_100284685_p06050hz.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/E518/production/_100284685_p06050hz.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-05T14:36:35Z",
+          "id": "http://www.bbc.co.uk/news/technology-43292047"
+        },
+        {
+          "title": "Haier smartwatch has a built-in projector at MWC 2018",
+          "description": "China's Haier reveals a smartwatch that turns the back of the wearer's hand into a display.",
+          "link": "http://www.bbc.co.uk/news/technology-43221100",
+          "guid": "http://www.bbc.co.uk/news/technology-43221100",
+          "pubDate": "2018-02-28T00:09:39Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/C2D8/production/_100208894_p05zlcm6.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/C2D8/production/_100208894_p05zlcm6.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-02-28T00:09:39Z",
+          "id": "http://www.bbc.co.uk/news/technology-43221100"
+        },
+        {
+          "title": "Samsung Galaxy S9 gets super slow-mo and AR emojis",
+          "description": "The flagship phone uses AI to slow down key moments of action and turns its owner into an emoji.",
+          "link": "http://www.bbc.co.uk/news/technology-43191574",
+          "guid": "http://www.bbc.co.uk/news/technology-43191574",
+          "pubDate": "2018-02-25T17:04:24Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/ECF1/production/_100175606_p05zb351.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/ECF1/production/_100175606_p05zb351.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-02-25T17:04:24Z",
+          "id": "http://www.bbc.co.uk/news/technology-43191574"
+        },
+        {
+          "title": "Etsy told to remove 'vile' cards",
+          "description": "Other cards sold through online marketplace Etsy depict Jimmy Savile and Josef Fritzl.",
+          "link": "http://www.bbc.co.uk/news/uk-england-derbyshire-43391219",
+          "guid": "http://www.bbc.co.uk/news/uk-england-derbyshire-43391219",
+          "pubDate": "2018-03-14T13:25:34Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/1471C/production/_100404738_karenmatthews.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/1471C/production/_100404738_karenmatthews.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-14T13:25:34Z",
+          "id": "http://www.bbc.co.uk/news/uk-england-derbyshire-43391219"
+        },
+        {
+          "title": "Adapt or die",
+          "description": "In the first of our Future of Work series, we look at how new tech could change our working lives.",
+          "link": "http://www.bbc.co.uk/news/business-43259906",
+          "guid": "http://www.bbc.co.uk/news/business-43259906",
+          "pubDate": "2018-03-16T00:01:30Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/34B4/production/_100429431_gettyimages-914714976.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/34B4/production/_100429431_gettyimages-914714976.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T00:01:30Z",
+          "id": "http://www.bbc.co.uk/news/business-43259906"
+        },
+        {
+          "title": "'Ambulance to the future'",
+          "description": "Freezing the deceased in the hope of one day reviving them could become a mainstream service, advocates say.",
+          "link": "http://www.bbc.co.uk/news/business-43259902",
+          "guid": "http://www.bbc.co.uk/news/business-43259902",
+          "pubDate": "2018-03-16T00:07:50Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/6318/production/_100386352_cyrogenetics.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/6318/production/_100386352_cyrogenetics.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T00:07:50Z",
+          "id": "http://www.bbc.co.uk/news/business-43259902"
+        },
+        {
+          "title": "Remote shoppers",
+          "description": "Up to a million people are employed around the world as professional shoppers for clients in China.",
+          "link": "http://www.bbc.co.uk/news/business-43259904",
+          "guid": "http://www.bbc.co.uk/news/business-43259904",
+          "pubDate": "2018-03-16T00:11:54Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/FF58/production/_100386356_diagou.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/FF58/production/_100386356_diagou.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T00:11:54Z",
+          "id": "http://www.bbc.co.uk/news/business-43259904"
+        },
+        {
+          "title": "Rotten ideas",
+          "description": "As the fight against plastic pollution gains momentum, firms are tackling the issue in different ways.",
+          "link": "http://www.bbc.co.uk/news/business-43390938",
+          "guid": "http://www.bbc.co.uk/news/business-43390938",
+          "pubDate": "2018-03-16T00:21:21Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/A31A/production/_100445714_new1.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/A31A/production/_100445714_new1.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T00:21:21Z",
+          "id": "http://www.bbc.co.uk/news/business-43390938"
+        },
+        {
+          "title": "Fail harder",
+          "description": "Talking about failure is taboo in Germany, and it could be holding business back.",
+          "link": "http://www.bbc.co.uk/news/business-43287225",
+          "guid": "http://www.bbc.co.uk/news/business-43287225",
+          "pubDate": "2018-03-15T00:28:17Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/117F5/production/_100296617_patrick.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/117F5/production/_100296617_patrick.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-15T00:28:17Z",
+          "id": "http://www.bbc.co.uk/news/business-43287225"
+        },
+        {
+          "title": "Smart speakers tested",
+          "description": "How do Alexa, Siri and Google Home measure up - and which is the best smart speaker for you?",
+          "link": "http://www.bbc.co.uk/news/entertainment-arts-43346810",
+          "guid": "http://www.bbc.co.uk/news/entertainment-arts-43346810",
+          "pubDate": "2018-03-13T01:17:24Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/888E/production/_100385943_speakers-nc.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/888E/production/_100385943_speakers-nc.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-13T01:17:24Z",
+          "id": "http://www.bbc.co.uk/news/entertainment-arts-43346810"
+        },
+        {
+          "title": "Model citizens",
+          "description": "China's tech transformation proceeds apace, but with it comes more digital monitoring and control.",
+          "link": "http://www.bbc.co.uk/news/business-43335813",
+          "guid": "http://www.bbc.co.uk/news/business-43335813",
+          "pubDate": "2018-03-13T00:21:21Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/6908/production/_100388862_gettyimages-524701740.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/6908/production/_100388862_gettyimages-524701740.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-13T00:21:21Z",
+          "id": "http://www.bbc.co.uk/news/business-43335813"
+        },
+        {
+          "title": "AI meets robotics",
+          "description": "Researchers in Texas aim to create robots that can cope with our messy world.",
+          "link": "http://www.bbc.co.uk/news/science-environment-43215863",
+          "guid": "http://www.bbc.co.uk/news/science-environment-43215863",
+          "pubDate": "2018-03-11T01:39:03Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/13704/production/_100202697_robotcureal.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/13704/production/_100202697_robotcureal.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-11T01:39:03Z",
+          "id": "http://www.bbc.co.uk/news/science-environment-43215863"
+        },
+        {
+          "title": "Fly drive",
+          "description": "Since cars were invented, people have dreamed about making them fly. So why haven't they taken off?",
+          "link": "http://www.bbc.co.uk/news/business-43329676",
+          "guid": "http://www.bbc.co.uk/news/business-43329676",
+          "pubDate": "2018-03-09T00:02:51Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/156BF/production/_100334778_pal-v_liberty_flying_car_1500px_srgb_002.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/156BF/production/_100334778_pal-v_liberty_flying_car_1500px_srgb_002.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-09T00:02:51Z",
+          "id": "http://www.bbc.co.uk/news/business-43329676"
+        },
+        {
+          "title": "Obituary: Trevor Baylis",
+          "description": "Inventor whose wind-up radio played a vital role in the battle against Aids in Africa",
+          "link": "http://www.bbc.co.uk/news/technology-28316975",
+          "guid": "http://www.bbc.co.uk/news/technology-28316975",
+          "pubDate": "2018-03-06T13:06:59Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/129A7/production/_100299167_mediaitem100299166.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/129A7/production/_100299167_mediaitem100299166.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-06T13:06:59Z",
+          "id": "http://www.bbc.co.uk/news/technology-28316975"
+        },
+        {
+          "title": "Power up",
+          "description": "A breakthrough in materials technology could see fast-charging supercapacitors rival lithium-ion batteries.",
+          "link": "http://www.bbc.co.uk/news/business-43285885",
+          "guid": "http://www.bbc.co.uk/news/business-43285885",
+          "pubDate": "2018-03-06T00:15:29Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/6DF4/production/_100284182_hi044452539.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/6DF4/production/_100284182_hi044452539.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-06T00:15:29Z",
+          "id": "http://www.bbc.co.uk/news/business-43285885"
+        },
+        {
+          "title": "The British Library's race to save old audio recordings",
+          "description": "The recordings are on more than 40 different formats and some are degrading due to decay.",
+          "link": "http://www.bbc.co.uk/news/technology-43231982",
+          "guid": "http://www.bbc.co.uk/news/technology-43231982",
+          "pubDate": "2018-03-07T00:16:07Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/501E/production/_100301502_p060868r.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/501E/production/_100301502_p060868r.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-07T00:16:07Z",
+          "id": "http://www.bbc.co.uk/news/technology-43231982"
+        },
+        {
+          "title": "The Oscar-winning special effects of Blade Runner 2049",
+          "description": "Click meets one of the people responsible for the movie's award winning special effects.",
+          "link": "http://www.bbc.co.uk/news/technology-43292541",
+          "guid": "http://www.bbc.co.uk/news/technology-43292541",
+          "pubDate": "2018-03-05T16:14:58Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/2E5C/production/_100286811_p0605hm8.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/2E5C/production/_100286811_p0605hm8.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-05T16:14:58Z",
+          "id": "http://www.bbc.co.uk/news/technology-43292541"
+        },
+        {
+          "title": "The robot based on a snake and other news",
+          "description": "BBC Click's Dan Simmons looks at some of the best technology stories of the week.",
+          "link": "http://www.bbc.co.uk/news/technology-43118479",
+          "guid": "http://www.bbc.co.uk/news/technology-43118479",
+          "pubDate": "2018-03-02T00:24:26Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/C5A1/production/_100239505_p05zslw3.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/C5A1/production/_100239505_p05zslw3.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-02T00:24:26Z",
+          "id": "http://www.bbc.co.uk/news/technology-43118479"
+        },
+        {
+          "title": "Deepfakes: The face-swapping software explained",
+          "description": "The software uses machine-learning to create computer-generated versions of people's faces.",
+          "link": "http://www.bbc.co.uk/news/technology-43118477",
+          "guid": "http://www.bbc.co.uk/news/technology-43118477",
+          "pubDate": "2018-03-01T01:28:09Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/12C33/production/_100215867_p05zmkgq.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/12C33/production/_100215867_p05zmkgq.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-01T01:28:09Z",
+          "id": "http://www.bbc.co.uk/news/technology-43118477"
+        },
+        {
+          "title": "Paralympics 'pit lane’ where athletes get repairs",
+          "description": "Have you ever wondered how athletes cope when their prosthetic limbs or wheelchairs break?",
+          "link": "http://www.bbc.co.uk/news/health-43421549",
+          "guid": "http://www.bbc.co.uk/news/health-43421549",
+          "pubDate": "2018-03-17T01:39:31Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/108F1/production/_100452876_p061cr0z.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/108F1/production/_100452876_p061cr0z.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-17T01:39:31Z",
+          "id": "http://www.bbc.co.uk/news/health-43421549"
+        },
+        {
+          "title": "NanoMap: How uncertainty helps this drone fly",
+          "description": "MIT CSAIL's NanoMap system enables drones to avoid obstacles while flying at 20 mph (32km/h)",
+          "link": "http://www.bbc.co.uk/news/technology-43334814",
+          "guid": "http://www.bbc.co.uk/news/technology-43334814",
+          "pubDate": "2018-03-16T02:26:15Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/C473/production/_100419205_p0613s6r.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/C473/production/_100419205_p0613s6r.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T02:26:15Z",
+          "id": "http://www.bbc.co.uk/news/technology-43334814"
+        },
+        {
+          "title": "A better way to care for dementia patients",
+          "description": "Infrared technology and artificial intelligence offer a better way to take care of dementia patients. It can scan their vital signs 24 hours a day.",
+          "link": "http://www.bbc.co.uk/news/business-43409215",
+          "guid": "http://www.bbc.co.uk/news/business-43409215",
+          "pubDate": "2018-03-16T00:15:11Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/15B3B/production/_100419888_p0618jfl.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/15B3B/production/_100419888_p0618jfl.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T00:15:11Z",
+          "id": "http://www.bbc.co.uk/news/business-43409215"
+        },
+        {
+          "title": "Energy storage: the power of cold air",
+          "description": "Highview Power uses liquefied cold air to create stored energy. The air is reheated to produce power.",
+          "link": "http://www.bbc.co.uk/news/business-43346165",
+          "guid": "http://www.bbc.co.uk/news/business-43346165",
+          "pubDate": "2018-03-16T00:18:53Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/0A22/production/_100349520_p060m9rz.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/0A22/production/_100349520_p060m9rz.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-16T00:18:53Z",
+          "id": "http://www.bbc.co.uk/news/business-43346165"
+        },
+        {
+          "title": "South Korea gaming: Death by overwork sparks calls for change",
+          "description": "Critics say \"crunch time\", an intense burst of work just before a game is released, can be dangerous.",
+          "link": "http://www.bbc.co.uk/news/world-asia-43315496",
+          "guid": "http://www.bbc.co.uk/news/world-asia-43315496",
+          "pubDate": "2018-03-14T01:52:31Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/0438/production/_100408010_p06120ct.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/0438/production/_100408010_p06120ct.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-14T01:52:31Z",
+          "id": "http://www.bbc.co.uk/news/world-asia-43315496"
+        },
+        {
+          "title": "Visual effects behind Thor: Ragnarok",
+          "description": "Click talks to Alexis Wajsbrot, the visual effects supervisor for Thor: Ragnarok.",
+          "link": "http://www.bbc.co.uk/news/technology-43334812",
+          "guid": "http://www.bbc.co.uk/news/technology-43334812",
+          "pubDate": "2018-03-13T00:07:47Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/6E08/production/_100386182_p060wz59.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/6E08/production/_100386182_p060wz59.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-13T00:07:47Z",
+          "id": "http://www.bbc.co.uk/news/technology-43334812"
+        }
+      ],
+      "title": "BBC News - Technology",
+      "description": "BBC News - Technology",
+      "link": "http://www.bbc.co.uk/news/",
+      "generator": "RSS for Node",
+      "lastBuildDate": "2018-03-18T01:40:12Z",
+      "copyright": "Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.",
+      "language": "en-gb",
+      "ttl": "15",
+      "image": {
+        "url": "http://news.bbcimg.co.uk/nol/shared/img/bbc_news_120x60.gif",
+        "title": "BBC News - Technology",
+        "link": "http://www.bbc.co.uk/news/"
+      }
+    }
+  preview-mode: live
+  preview-container: event
+  search-term: 
+  service-url: 
+  xclass: 
+  xstyle: 
+  voice: |-
+    The latest BBC headlines are:
+    {% for item in items | limit: 3 %}
+    {{item.title}}
+    {{item.description}}
+    {{item.link}}
+    {% endfor %}

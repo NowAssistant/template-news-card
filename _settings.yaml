@@ -1,0 +1,76 @@
+contentType: Card
+title: News
+name: template-news-card
+StreamSource: null
+CollectionModeField:
+  CollectionMode: 0
+PriorityField:
+  Priority: 5
+MaxItemsField:
+  MaxItems: 3
+CardComponent: template-news-card/template-news-card-card
+StoreMetadataField:
+  description: Expandable news card that pulls RSS news feed from bbc.co.uk
+  logourl: template-news-card/icons8-news.png
+  storehide: !!bool false
+  disableWorkplace: !!bool false
+CommonPart:
+  Owner: !!int 222
+  Container: null
+  CreatedUtc: 2017-10-11T15:21:56.8870318Z
+  PublishedUtc: 2018-03-12T08:40:31.5798967Z
+  ModifiedUtc: 2018-03-12T08:40:31.1736509Z
+  VersionCreatedUtc: 2018-03-12T08:40:31.0000000
+  VersionPublishedUtc: 2018-03-12T08:40:31.0000000
+  VersionModifiedUtc: 2018-03-12T08:40:31.0000000
+ServicePart:
+  ConnectorTypeName: Generic RSS
+  ConnectorTypeId: !!int 241
+  ConnectorName: bbc-news
+  ServiceName: Feed
+  Url: ~/api/adenin.GateKeeper.Connector/bbc-news/Feed
+  ServiceParameters: '{}'
+SearchContextPart:
+  Query: null
+  Interface: null
+CommandPart:
+  CommandType: Utterances
+  Command: |+
+    (latest) bbc news
+
+    show me the (latest) bbc news
+
+  DefaultDate: null
+  Intent: null
+  Ext: {}
+AppPart:
+  App: null
+  Url: 
+  ExtUrl: 
+  Priority: !!int 0
+  AppFaceId: !!int 0
+  Category: orange
+  Icon: now:search
+  CSSClasses: null
+  Enabled: !!bool false
+  NewWindow: !!bool false
+  UrlWithId: !!bool true
+  AvailableAppFaceRecords: null
+  HasPattern: !!bool false
+RoleViewPermissionsPart:
+  AllowedRoles:
+    - Authenticated
+  Audiences: []
+  Mandatory: False
+RecurringTaskPart:
+  Schedule: 0 * * * *
+  ActivityType: adenin.Now.Activities.CardTask.UpdateCard
+  StartDateUtc: null
+  EndDateUtc: null
+  NextOccurrenceUtc: 2018-03-12T09:04:53.0000000
+  Priority: !!int 5
+  Status: Enabled
+  NowFlag: 0
+  LastExecutionUTC: 2018-03-12T09:04:53.0000000
+  EnableWebHook: !!bool false
+  WebHookToken: null
