@@ -27,16 +27,18 @@ properties:
           background-color: lightgray;
         }
       </style>
-      <div class="container layout-vertical news-list m">
+      <div class="container layout-vertical news-list mx mbsm">
       {% for item in items | limit: 6 %}
-       <div class="news-item layout-horizontal mbsm {% if forloop.index > 3 %}expanded-only{%endif%}">
+       <div class="news-item layout-horizontal mbsm mtsm {% if forloop.index > 3 %}expanded-only{%endif%}">
         <at-link href="{{item.link}}" label="{{item.title | escape }}">
-        <div class="layout-horizontal">
-           <div class="mr mtsm"><iron-image sizing="cover" preload class="news-list-image" src="{{item.thumbnail}}"></iron-image></div>
+        <div class="layout-horizontal">     
            <div class="layout-flex">
               <at-carbon-clamp lines="2" class="font-subhead primary">{{item.title}}</at-carbon-clamp>
               <at-carbon-clamp lines="2">{{item.description}}</at-carbon-clamp>  
           </div>
+        {% if item.thumbnail %}
+        	<div class="ml mtsm"><iron-image sizing="cover" preload class="news-list-image" src="{{item.thumbnail}}"></iron-image></div>
+        {% endif %}
         </div>
         </at-link>
        </div>
@@ -83,7 +85,7 @@ $meta:
           "guid": "http://www.bbc.co.uk/news/technology-43414625",
           "pubDate": "2018-03-18T01:39:02Z",
           "media_thumbnail": "http://c.files.bbci.co.uk/AF5C/production/_100429844_p0616t5x.jpg",
-          "thumbnail": "http://c.files.bbci.co.uk/AF5C/production/_100429844_p0616t5x.jpg",
+          "thumbnail": "",
           "mrss_thumbnail": "replace with media_thumbnail",
           "date": "2018-03-18T01:39:02Z",
           "id": "http://www.bbc.co.uk/news/technology-43414625"
