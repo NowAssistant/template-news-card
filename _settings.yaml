@@ -25,10 +25,10 @@ CommonPart:
   VersionModifiedUtc: 2018-03-12T08:40:31.0000000
 ServicePart:
   ConnectorTypeName: Generic RSS
-  ConnectorTypeId: !!int 241
+  ConnectorTypeId: !!int 393
   ConnectorName: bbc-news
-  ServiceName: Feed
-  Url: ~/api/adenin.GateKeeper.Connector/bbc-news/Feed
+  ServiceName: FeedFast
+  Url: ~/api/adenin.GateKeeper.Connector/bbc-news/FeedFast
   ServiceParameters: '{}'
 SearchContextPart:
   Query: null
@@ -58,8 +58,7 @@ AppPart:
   AvailableAppFaceRecords: null
   HasPattern: !!bool false
 RoleViewPermissionsPart:
-  AllowedRoles:
-    - Authenticated
+  AllowedRoles: []
   Audiences: []
   Mandatory: False
 RecurringTaskPart:

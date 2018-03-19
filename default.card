@@ -19,7 +19,8 @@ properties:
     xtype: at-core-view
     modelRoot: state.model
     model: 
-    view: |
+    view: |2
+
       <style>
         .news-list-image {
        		height: 80px;
@@ -27,19 +28,22 @@ properties:
           background-color: lightgray;
         }
       </style>
-      <div class="container layout-vertical news-list mx mbsm">
+       
+      <div class="layout-vertical">
       {% for item in items | limit: 6 %}
-       <div class="news-item layout-horizontal mbsm mtsm {% if forloop.index > 3 %}expanded-only{%endif%}">
-        <at-link href="{{item.link}}" label="{{item.title | escape }}">
-        <div class="layout-horizontal">     
-           <div class="layout-flex">
-              <at-carbon-clamp lines="2" class="font-subhead primary">{{item.title}}</at-carbon-clamp>
-              <at-carbon-clamp lines="2" class="text-primary">{{item.description}}</at-carbon-clamp>    
+       <div class="layout-horizontal  {% if forloop.index > 3 %}expanded-only{%endif%}">
+        <at-link class="layout-flex" href="{{item.link}}" xref="{{item.xlink}}" label="{{item.title | escape }}">
+          <div class="layout-horizontal mx mbsm mtsm">     
+             <div class="layout-flex text-primary">
+                <at-carbon-clamp lines="2" class="font-subhead primary">{{item.title | truncate: 70, ""}}</at-carbon-clamp>
+                <at-carbon-clamp lines="2">{{item.description | truncate: 160, ""}}</at-carbon-clamp>  
+            </div>
+          {% if item.thumbnail %}
+            <div class="ml mtsm">
+              <iron-image sizing="cover" preload class="news-list-image" src="{{item.thumbnail}}">		
+            </div>  
+          {% endif %}
           </div>
-        {% if item.thumbnail %}
-        	<div class="ml mtsm"><iron-image sizing="cover" preload class="news-list-image" src="{{item.thumbnail}}"></iron-image></div>
-        {% endif %}
-        </div>
         </at-link>
        </div>
       {% endfor %}
@@ -50,6 +54,7 @@ properties:
     actionListeners:
       - _start
     default: 
+    updateMode: 0
   footer3:
     type: element
     xtype: at-carbon-card-footer
@@ -62,33 +67,33 @@ properties:
     actionListeners:
       - _start
 $meta:
-  cardId: 240
+  cardId: 399
   preview-data: |-
     {
       "items": [
         {
-          "title": "Trump campaign data firm accused of harvesting Facebook data",
-          "description": "A US attorney general is investigating reports that millions of Facebook profiles were accessed.",
-          "link": "http://www.bbc.co.uk/news/world-us-canada-43444791",
-          "guid": "http://www.bbc.co.uk/news/world-us-canada-43444791",
-          "pubDate": "2018-03-17T21:55:11Z",
-          "media_thumbnail": "http://c.files.bbci.co.uk/13A7A/production/_100460508_whatsubject.jpg",
-          "thumbnail": "http://c.files.bbci.co.uk/13A7A/production/_100460508_whatsubject.jpg",
-          "mrss_thumbnail": "replace with media_thumbnail",
-          "date": "2018-03-17T21:55:11Z",
-          "id": "http://www.bbc.co.uk/news/world-us-canada-43444791"
-        },
-        {
-          "title": "What does the inside of your knee sound like?",
+          "title": "What does your knee sound like inside?",
           "description": "A team at the Georgia Institute of Technology is developing a stethoscope for your knees.",
           "link": "http://www.bbc.co.uk/news/technology-43414625",
           "guid": "http://www.bbc.co.uk/news/technology-43414625",
           "pubDate": "2018-03-18T01:39:02Z",
           "media_thumbnail": "http://c.files.bbci.co.uk/AF5C/production/_100429844_p0616t5x.jpg",
-          "thumbnail": "",
+          "thumbnail": "http://c.files.bbci.co.uk/AF5C/production/_100429844_p0616t5x.jpg",
           "mrss_thumbnail": "replace with media_thumbnail",
           "date": "2018-03-18T01:39:02Z",
           "id": "http://www.bbc.co.uk/news/technology-43414625"
+        },
+        {
+          "title": "UK tech giant Micro Focus halves in value as shares crash",
+          "description": "Shares in Micro Focus, the UK's biggest technology firm, crash after warning on lower revenues.",
+          "link": "http://www.bbc.co.uk/news/business-43457024",
+          "guid": "http://www.bbc.co.uk/news/business-43457024",
+          "pubDate": "2018-03-19T10:19:49Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/2BA9/production/_100477111_micro.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/2BA9/production/_100477111_micro.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-19T10:19:49Z",
+          "id": "http://www.bbc.co.uk/news/business-43457024"
         },
         {
           "title": "Can kids hold pens in the digital age?",
@@ -245,6 +250,18 @@ $meta:
           "mrss_thumbnail": "replace with media_thumbnail",
           "date": "2018-02-25T17:04:24Z",
           "id": "http://www.bbc.co.uk/news/technology-43191574"
+        },
+        {
+          "title": "Robot Wars has been axed by the BBC again",
+          "description": "The series has been scrapped by the BBC to make room for new shows.",
+          "link": "http://www.bbc.co.uk/news/newsbeat-43442628",
+          "guid": "http://www.bbc.co.uk/news/newsbeat-43442628",
+          "pubDate": "2018-03-17T16:39:06Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/382D/production/_87718341_robot_tank_976x549.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/382D/production/_87718341_robot_tank_976x549.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-17T16:39:06Z",
+          "id": "http://www.bbc.co.uk/news/newsbeat-43442628"
         },
         {
           "title": "Etsy told to remove 'vile' cards",
@@ -439,6 +456,18 @@ $meta:
           "id": "http://www.bbc.co.uk/news/technology-43118477"
         },
         {
+          "title": "Aubrey de Grey: Treating ageing as a curable disease",
+          "description": "The scientist aims to develop therapies to repair damage at the molecular and cellular level.",
+          "link": "http://www.bbc.co.uk/news/technology-43402894",
+          "guid": "http://www.bbc.co.uk/news/technology-43402894",
+          "pubDate": "2018-03-19T00:15:27Z",
+          "media_thumbnail": "http://c.files.bbci.co.uk/84C0/production/_100448933_p061c1q5.jpg",
+          "thumbnail": "http://c.files.bbci.co.uk/84C0/production/_100448933_p061c1q5.jpg",
+          "mrss_thumbnail": "replace with media_thumbnail",
+          "date": "2018-03-19T00:15:27Z",
+          "id": "http://www.bbc.co.uk/news/technology-43402894"
+        },
+        {
           "title": "Paralympics 'pit lane’ where athletes get repairs",
           "description": "Have you ever wondered how athletes cope when their prosthetic limbs or wheelchairs break?",
           "link": "http://www.bbc.co.uk/news/health-43421549",
@@ -497,25 +526,13 @@ $meta:
           "mrss_thumbnail": "replace with media_thumbnail",
           "date": "2018-03-14T01:52:31Z",
           "id": "http://www.bbc.co.uk/news/world-asia-43315496"
-        },
-        {
-          "title": "Visual effects behind Thor: Ragnarok",
-          "description": "Click talks to Alexis Wajsbrot, the visual effects supervisor for Thor: Ragnarok.",
-          "link": "http://www.bbc.co.uk/news/technology-43334812",
-          "guid": "http://www.bbc.co.uk/news/technology-43334812",
-          "pubDate": "2018-03-13T00:07:47Z",
-          "media_thumbnail": "http://c.files.bbci.co.uk/6E08/production/_100386182_p060wz59.jpg",
-          "thumbnail": "http://c.files.bbci.co.uk/6E08/production/_100386182_p060wz59.jpg",
-          "mrss_thumbnail": "replace with media_thumbnail",
-          "date": "2018-03-13T00:07:47Z",
-          "id": "http://www.bbc.co.uk/news/technology-43334812"
         }
       ],
       "title": "BBC News - Technology",
       "description": "BBC News - Technology",
       "link": "http://www.bbc.co.uk/news/",
       "generator": "RSS for Node",
-      "lastBuildDate": "2018-03-18T01:40:12Z",
+      "lastBuildDate": "2018-03-19T11:23:12Z",
       "copyright": "Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.",
       "language": "en-gb",
       "ttl": "15",
