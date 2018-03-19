@@ -34,7 +34,7 @@ properties:
         <div class="layout-horizontal">     
            <div class="layout-flex">
               <at-carbon-clamp lines="2" class="font-subhead primary">{{item.title}}</at-carbon-clamp>
-              <at-carbon-clamp lines="2">{{item.description}}</at-carbon-clamp>  
+              <at-carbon-clamp lines="2" class="text-primary">{{item.description}}</at-carbon-clamp>    
           </div>
         {% if item.thumbnail %}
         	<div class="ml mtsm"><iron-image sizing="cover" preload class="news-list-image" src="{{item.thumbnail}}"></iron-image></div>
