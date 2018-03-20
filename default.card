@@ -1,4 +1,4 @@
-﻿$type: card
+"﻿$type": card
 rules: []
 properties:
   title:
@@ -548,10 +548,13 @@ $meta:
   service-url: 
   xclass: 
   xstyle: 
-  voice: |-
-    The latest BBC headlines are:
+  voice: 
+  markdown: |-
+    The latest headlines are:
     {% for item in items | limit: 3 %}
     {{item.title}}
     {{item.description}}
     {{item.link}}
     {% endfor %}
+  botTemplate: 2
+$type: card
